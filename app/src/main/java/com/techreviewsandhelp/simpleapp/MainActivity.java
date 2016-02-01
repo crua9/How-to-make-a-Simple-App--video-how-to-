@@ -4,16 +4,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    //Declare our View variables
     private School mSchool = new School();
-        //Declare our View variables
     private TextView mNameTextView;
     private TextView mSchoolTextView;
     private Button mButton;
+    private RelativeLayout mRelativeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mNameTextView = (TextView) findViewById(R.id.myname);
         mSchoolTextView = (TextView)findViewById(R.id.school);
         mButton = (Button) findViewById(R.id.button);
+        mRelativeLayout = (RelativeLayout)findViewById(R.id.relativeLayout);
 
         View.OnClickListener listener = new View.OnClickListener(){
             public void onClick(View v){
