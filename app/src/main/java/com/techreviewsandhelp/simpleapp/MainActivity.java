@@ -1,5 +1,6 @@
 package com.techreviewsandhelp.simpleapp;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mSchoolTextView;
     private Button mButton;
     private RelativeLayout mRelativeLayout;
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener(){
             public void onClick(View v){
                 String schools = mSchool.getSchool();
+                int color = mColorWheel.getColor();
 
                 String name = "I learned how to code for Android thanks to:";
 
@@ -41,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
                 mSchoolTextView.setText(schools);
                 mNameTextView.setText(name);
-                mButton.setVisibility(View.INVISIBLE);
+                //mButton.setVisibility(View.INVISIBLE);
+                mRelativeLayout.setBackgroundColor(color);
+
             }
 
         };
